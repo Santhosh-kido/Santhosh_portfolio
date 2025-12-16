@@ -26,6 +26,62 @@
             --border-color: #bdc3c7;
         }
 
+        /* Dark Mode */
+        body.dark-mode {
+            --primary-color: #ffffff;
+            --secondary-color: #ffffff;
+            --accent-color: #3498db;
+            --text-color: #ffffff;
+            --light-bg: #2c3e50;
+            --white: #34495e;
+            --border-color: #5a6c7d;
+            background-color: #2c3e50;
+            color: #ffffff;
+        }
+
+        body.dark-mode .about-content {
+            color: #ffffff;
+        }
+
+        body.dark-mode .project-card p,
+        body.dark-mode .cert-card p,
+        body.dark-mode .resume-card p,
+        body.dark-mode .skill-list li,
+        body.dark-mode .contact-card a,
+        body.dark-mode .navbar-info p {
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .footer {
+            background-color: #1a252f;
+            color: #ffffff !important;
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: absolute;
+            right: -12rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: 2px solid var(--accent-color);
+            border-radius: 6px;
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
         /* Header */
         .header {
             background: #2C5282;
@@ -78,7 +134,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             padding: 0.3rem 0;
             transition: all 0.3s ease;
-            min-height: 60px;
+            min-height: 65px;
         }
 
         .navbar-brand {
@@ -140,7 +196,7 @@
             margin: 0 1rem;
             transition: color 0.3s ease;
             padding: 0.4rem 0.8rem;
-            font-size: 1rem;
+            font-size: 1.1rem;
             white-space: nowrap;
             flex-shrink: 0;
         }
@@ -174,6 +230,15 @@
             transform: translateX(-50%);
             display: flex !important;
             white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .dark-mode-toggle {
+                position: fixed;
+                right: 1rem;
+                top: 1rem;
+                z-index: 1003;
+            }
         }
 
         /* Mobile navigation styles */
@@ -278,7 +343,7 @@
         }
 
         .section-title {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-weight: 600;
             color: var(--primary-color);
             text-align: center;
@@ -303,10 +368,10 @@
         }
 
         .about-content {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #555;
             text-align: center;
-            max-width: 700px;
+            max-width: 950px;
             margin: 0 auto;
             line-height: 1.6;
         }
@@ -388,6 +453,7 @@
             color: var(--primary-color);
             font-weight: 600;
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
 
         .project-card p {
@@ -400,12 +466,13 @@
             background-color: var(--accent-color);
             border-color: var(--accent-color);
             color: white;
-            padding: 0.5rem 1.5rem;
+            padding: 0.4rem 1.2rem;
             border-radius: 25px;
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-block;
             cursor: pointer;
+            font-size: 0.9rem;
         }
 
         .btn-project:hover {
@@ -452,12 +519,12 @@
 
         .view-btn {
             position: absolute;
-            top: -5px;
+            top: 0px;
             right: -5px;
             background: none;
             color: var(--accent-color);
             border: none;
-            font-size: 1.2rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
             padding: 0;
@@ -503,8 +570,8 @@
             padding: 0.8rem 0.6rem;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 240px;
-            flex: 0 0 240px;
+            width: 280px;
+            flex: 0 0 280px;
             border-top: 4px solid var(--accent-color);
         }
 
@@ -514,15 +581,15 @@
         }
 
         .resume-icon {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--accent-color);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .resume-card h4 {
             color: var(--primary-color);
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.3rem;
         }
 
         .resume-card p {
@@ -544,14 +611,10 @@
         }
 
         .contact-card {
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
             padding: 0.4rem;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            min-width: 120px;
-            border-top: 4px solid var(--accent-color);
+            transition: transform 0.3s ease;
+            min-width: 150px;
         }
 
         .contact-card:hover {
@@ -633,8 +696,9 @@
             }
             
             .contact-cards {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+                justify-content: center;
+                gap: 0.8rem;
             }
             
             .skill-card, .project-card, .cert-card {
@@ -642,15 +706,15 @@
             }
             
             .resume-cards {
-                flex-direction: column;
+                flex-direction: row;
                 margin: 0 1rem;
-                gap: 1rem;
+                gap: 0.8rem;
             }
             
             .resume-card {
                 width: 100%;
-                flex: none;
-                max-width: 300px;
+                flex: 1;
+                max-width: none;
             }
         }
     </style>
@@ -672,6 +736,7 @@
     <li class="nav-item"><a class="nav-link" href="#certifications" onclick="closeMobileMenu()">Certifications</a></li>
     <li class="nav-item"><a class="nav-link" href="#resume" onclick="closeMobileMenu()">Resume</a></li>
     <li class="nav-item"><a class="nav-link" href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" onclick="toggleDarkMode(); closeMobileMenu();"><i class="fas fa-moon" id="mobileDarkModeIcon"></i> Dark Mode</a></li>
    </ul>
   </div>
 
@@ -704,17 +769,16 @@
       <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
      </ul>
     </div>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
+     <i class="fas fa-moon" id="darkModeIcon"></i>
+    </button>
    </div>
   </nav><!-- About Section -->
   <section id="about" class="section about-section">
    <div class="container">
     <h2 class="section-title" id="about-title">About Me</h2>
     <div class="about-content">
-     <p id="about-description">I'm Santhosh R., an aspiring Computer Science student at Vel Tech HighTech 
-        Engineering College with a passion for full-stack development and creating meaningful user experiences. 
-        I'm driven by a disciplined mindset and a strong desire to grow, collaborate, and contribute to impactful solutions. 
-        My journey blends technical curiosity with a commitment to clarity, creativity, and continuous improvement — whether 
-        it's building practical tools or refining the way ideas are presented.</p>
+     <p id="about-description">I'm Santhosh R., a Computer Science student at Vel Tech HighTech Engineering College with a passion for full-stack development. I'm driven by discipline and a strong desire to grow, collaborate, and contribute to impactful solutions. My journey blends technical curiosity with creativity and continuous improvement. I focus on building practical tools and creating meaningful user experiences. Always committed to clarity, growth, and delivering quality solutions.</p>
     </div>
    </div>
   </section><!-- Skills Section -->
@@ -839,18 +903,16 @@
      <div class="contact-card">
       <div class="contact-icon"><i class="fas fa-envelope"></i>
       </div>
-      <h5>Email</h5><a href="mailto:santhoshravikumar10@gmail.com" id="email-link">santhoshravikumar10@gmail.com</a>
+      <a href="mailto:santhoshravikumar10@gmail.com" id="email-link">santhoshravikumar10@gmail.com</a>
      </div>
      <a href="https://www.linkedin.com/in/santhosh-r-b03226344/" target="_blank" rel="noopener noreferrer" class="contact-card" title="Connect with me" id="linkedin-link">
       <div class="contact-icon"><i class="fab fa-linkedin"></i>
       </div>
-      <h5>LinkedIn</h5>
       <span>Santhosh R</span>
      </a>
      <a href="https://github.com/Santhosh-kido" target="_blank" rel="noopener noreferrer" class="contact-card" title="View my code" id="github-link">
       <div class="contact-icon"><i class="fab fa-github"></i>
       </div>
-      <h5>GitHub</h5>
       <span>Santhosh-Kido</span>
      </a>
     </div>
@@ -868,7 +930,7 @@
             name: "Santhosh R",
             tagline: "Grow with grit and rise with discipline",
             about_title: "About Me",
-            about_description: "I'm Santhosh R., an aspiring Computer Science student at Vel Tech HighTech Engineering College with a passion for full-stack development and creating meaningful user experiences. I'm driven by a disciplined mindset and a strong desire to grow, collaborate, and contribute to impactful solutions. My journey blends technical curiosity with a commitment to clarity, creativity, and continuous improvement — whether it's building practical tools or refining the way ideas are presented.",
+            about_description: "I'm Santhosh R., a Computer Science student at Vel Tech HighTech Engineering College with a passion for full-stack development. I'm driven by discipline and a strong desire to grow, collaborate, and contribute to impactful solutions. My journey blends technical curiosity with creativity and continuous improvement. I focus on building practical tools and creating meaningful user experiences. Always committed to clarity, growth, and delivering quality solutions.",
             email: "santhoshravikumar10@gmail.com",
             linkedin_url: "https://www.linkedin.com/in/santhosh-r-b03226344/",
             github_url: "https://github.com/Santhosh-kido",
@@ -1136,6 +1198,32 @@
                 mobileDropdown.classList.remove('show');
             }
         });
+
+        // Dark mode toggle functionality
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.getElementById('darkModeIcon');
+            const mobileIcon = document.getElementById('mobileDarkModeIcon');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.className = 'fas fa-sun';
+                mobileIcon.className = 'fas fa-sun';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                icon.className = 'fas fa-moon';
+                mobileIcon.className = 'fas fa-moon';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('darkModeIcon').className = 'fas fa-sun';
+            document.getElementById('mobileDarkModeIcon').className = 'fas fa-sun';
+        }
     </script>
  </body>
 </html>
