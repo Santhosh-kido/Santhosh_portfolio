@@ -60,7 +60,7 @@
         /* Dark Mode Toggle */
         .dark-mode-toggle {
             position: absolute;
-            right: -12rem;
+            right: 1rem;
             top: 50%;
             transform: translateY(-50%);
             background: none;
@@ -230,6 +230,7 @@
             transform: translateX(-50%);
             display: flex !important;
             white-space: nowrap;
+            width: auto;
         }
 
         @media (max-width: 768px) {
@@ -299,21 +300,6 @@
                 box-shadow: 0 4px 20px rgba(0,0,0,0.15);
                 border: 1px solid var(--border-color);
                 display: none;
-            }
-            
-            .mobile-backdrop {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                z-index: 999;
-                display: none;
-            }
-            
-            .mobile-backdrop.show {
-                display: block;
             }
 
             .mobile-dropdown.show {
@@ -552,7 +538,6 @@
         .cert-card p {
             color: #666;
             margin: 0;
-            margin-bottom: -0.5rem;
         }
 
         /* Resume Section */
@@ -691,8 +676,8 @@
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .container {
-                padding-left: 1rem;
-                padding-right: 1rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
             }
             
             .header {
@@ -723,30 +708,22 @@
             }
             
             .skill-card {
-                padding: 1rem;
+                padding: 0.8rem;
                 margin-bottom: 1rem;
-                max-height: none;
-                min-height: 140px;
             }
             
-            .skill-card .skill-list li:last-child {
+            .skill-card h4 {
+                font-size: 0.9rem;
                 margin-bottom: 0.5rem;
+            }
+            
+            .skill-card .skill-list li {
+                font-size: 0.8rem;
+                padding: 0.2rem 0;
             }
             
             .project-card, .cert-card {
                 padding: 1.2rem;
-            }
-            
-            .cert-card h4 {
-                position: relative;
-                padding-right: 0;
-            }
-            
-            .view-btn {
-                position: static;
-                display: inline;
-                margin-left: 0.5rem;
-                font-size: 0.8rem;
             }
             
             .resume-cards {
@@ -770,9 +747,6 @@
   <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
    <span class="navbar-toggler-icon"></span>
   </button>
-
-  <!-- Mobile Menu Backdrop -->
-  <div class="mobile-backdrop" id="mobileBackdrop" onclick="closeMobileMenu()"></div>
 
   <!-- Mobile Menu Dropdown -->
   <div class="mobile-dropdown" id="mobileDropdown">
@@ -1220,16 +1194,16 @@
         // Mobile menu functions
         function toggleMobileMenu() {
             const mobileDropdown = document.getElementById('mobileDropdown');
-            const mobileBackdrop = document.getElementById('mobileBackdrop');
             mobileDropdown.classList.toggle('show');
-            mobileBackdrop.classList.toggle('show');
         }
 
         function closeMobileMenu() {
             const mobileDropdown = document.getElementById('mobileDropdown');
-            const mobileBackdrop = document.getElementById('mobileBackdrop');
             mobileDropdown.classList.remove('show');
-            mobileBackdrop.classList.remove('show');
+            // Clear active states from mobile menu links
+            document.querySelectorAll('.mobile-dropdown .nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
         }
 
         // Close mobile menu when clicking outside
