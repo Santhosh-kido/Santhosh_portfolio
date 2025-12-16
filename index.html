@@ -300,6 +300,21 @@
                 border: 1px solid var(--border-color);
                 display: none;
             }
+            
+            .mobile-backdrop {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                display: none;
+            }
+            
+            .mobile-backdrop.show {
+                display: block;
+            }
 
             .mobile-dropdown.show {
                 display: block !important;
@@ -537,6 +552,7 @@
         .cert-card p {
             color: #666;
             margin: 0;
+            margin-bottom: -0.5rem;
         }
 
         /* Resume Section */
@@ -674,6 +690,11 @@
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
             .header {
                 padding: 2rem 0;
             }
@@ -725,6 +746,7 @@
                 position: static;
                 display: inline;
                 margin-left: 0.5rem;
+                font-size: 0.8rem;
             }
             
             .resume-cards {
@@ -748,6 +770,9 @@
   <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
    <span class="navbar-toggler-icon"></span>
   </button>
+
+  <!-- Mobile Menu Backdrop -->
+  <div class="mobile-backdrop" id="mobileBackdrop" onclick="closeMobileMenu()"></div>
 
   <!-- Mobile Menu Dropdown -->
   <div class="mobile-dropdown" id="mobileDropdown">
@@ -1195,12 +1220,16 @@
         // Mobile menu functions
         function toggleMobileMenu() {
             const mobileDropdown = document.getElementById('mobileDropdown');
+            const mobileBackdrop = document.getElementById('mobileBackdrop');
             mobileDropdown.classList.toggle('show');
+            mobileBackdrop.classList.toggle('show');
         }
 
         function closeMobileMenu() {
             const mobileDropdown = document.getElementById('mobileDropdown');
+            const mobileBackdrop = document.getElementById('mobileBackdrop');
             mobileDropdown.classList.remove('show');
+            mobileBackdrop.classList.remove('show');
         }
 
         // Close mobile menu when clicking outside
