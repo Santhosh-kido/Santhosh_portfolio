@@ -60,7 +60,7 @@
         /* Dark Mode Toggle */
         .dark-mode-toggle {
             position: absolute;
-            right: 1rem;
+            right: -12rem;
             top: 50%;
             transform: translateY(-50%);
             background: none;
@@ -143,8 +143,8 @@
             display: none;
             align-items: center;
             gap: 0.8rem;
-            position: absolute;
-            left: 2rem;
+            margin-right: 3rem;
+            margin-left: -12.5rem;
         }
 
         .navbar-brand.show {
@@ -227,9 +227,10 @@
         }
 
         .navbar-collapse {
-            flex: 1;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex !important;
-            justify-content: center;
             white-space: nowrap;
         }
 
@@ -292,15 +293,14 @@
                 position: fixed;
                 top: 65px;
                 left: 1rem;
-                width: 240px;
+                width: 220px;
                 background-color: var(--white);
-                border-radius: 12px;
+                border-radius: 8px;
                 z-index: 1000;
-                padding: 0.8rem 0;
-                box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+                padding: 0.5rem 0;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.15);
                 border: 1px solid var(--border-color);
                 display: none;
-                backdrop-filter: blur(10px);
             }
 
             .mobile-dropdown.show {
@@ -316,18 +316,17 @@
             }
 
             .mobile-dropdown .nav-link {
-                margin: 0;
-                padding: 1rem 1.5rem;
+                margin: 0 0.5rem;
+                padding: 0.8rem 1rem;
                 text-align: left;
-                font-size: 1rem;
-                width: 100%;
-                border-radius: 8px;
-                margin: 0.2rem 0.5rem;
+                font-size: 0.95rem;
+                width: calc(100% - 1rem);
+                border-radius: 6px;
+                border-bottom: none;
                 color: var(--text-color) !important;
                 transition: all 0.3s ease;
                 display: block;
                 text-decoration: none;
-                font-weight: 500;
             }
 
             .mobile-dropdown .nav-link:hover {
@@ -388,8 +387,8 @@
             background: var(--white);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 1rem;
-            max-height: 150px;
+            padding: 1rem 1.5rem 1.5rem 1rem;
+            max-height: 160px;
             height: 100%;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-left: 4px solid var(--accent-color);
@@ -409,14 +408,14 @@
 
         .skill-list {
             list-style: none;
-            padding: 0;
+            padding: 0 0 .5rem 0;
+            margin-bottom: 0;
         }
 
         .skill-list li {
-            padding: 0.3rem 0;
+            padding: 0.3rem 0.5rem 0.3rem 1.2rem;
             color: #666;
             position: relative;
-            padding-left: 1.2rem;
         }
 
         .skill-list li::before {
@@ -424,6 +423,10 @@
             color: var(--accent-color);
             position: absolute;
             left: 0;
+        }
+
+        .skill-list li:last-child {
+            margin-bottom: 0.5rem;
         }
 
         /* Projects Section */
@@ -449,6 +452,7 @@
             cursor: default;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-card:hover {
@@ -624,6 +628,9 @@
             text-align: center;
             transition: transform 0.3s ease;
             min-width: 150px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--white);
         }
 
         .contact-card:hover {
@@ -680,134 +687,72 @@
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .container {
-                padding-left: 1.2rem;
-                padding-right: 1.2rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
             }
             
             .header {
-                padding: 3rem 0 2.5rem 0;
-                background: linear-gradient(135deg, #2C5282 0%, #3498db 100%);
+                padding: 2rem 0;
             }
             
             .header h1 {
-                font-size: 2rem;
-                font-weight: 700;
-                margin-bottom: 0.5rem;
-            }
-            
-            .header .tagline {
-                font-size: 1rem;
-                margin-top: 0.5rem;
-            }
-            
-            .avatar {
-                width: 70px;
-                height: 70px;
                 font-size: 1.8rem;
-                margin-bottom: 1rem;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            }
+            
+            .header-content {
+                margin-left: 0;
             }
             
             .section {
-                padding: 2.5rem 0;
+                padding: 2rem 0;
             }
             
             .section-title {
-                font-size: 1.8rem;
-                margin-bottom: 2rem;
-                font-weight: 700;
-            }
-            
-            .section-title::after {
-                width: 80px;
-                height: 4px;
-            }
-            
-            .about-content {
-                font-size: 1rem;
-                line-height: 1.7;
-                text-align: left;
-                padding: 0 0.5rem;
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
             }
             
             .contact-cards {
-                flex-direction: column;
-                align-items: center;
-                gap: 1.2rem;
-            }
-            
-            .contact-card {
-                width: 100%;
-                max-width: 280px;
-                padding: 1rem;
-                border-radius: 12px;
-                background: var(--white);
-                border: 1px solid var(--border-color);
-                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            }
-            
-            .contact-icon {
-                font-size: 1.5rem;
-                margin-bottom: 0.8rem;
+                flex-direction: row;
+                justify-content: center;
+                gap: 0.8rem;
             }
             
             .skill-card {
-                padding: 1.2rem;
-                margin-bottom: 1.2rem;
-                border-radius: 12px;
-                box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+                padding: 1rem;
+                margin-bottom: 1rem;
             }
             
             .skill-card h4 {
-                font-size: 1rem;
-                margin-bottom: 1rem;
-                font-weight: 600;
+                font-size: 0.9rem;
+                margin-bottom: 0.8rem;
             }
             
             .skill-card .skill-list li {
-                font-size: 0.9rem;
-                padding: 0.5rem 0;
-                padding-left: 1.8rem;
-                line-height: 1.4;
+                font-size: 0.8rem;
+                padding: 0.4rem 0;
+                padding-left: 1.5rem;
             }
             
             .project-card, .cert-card {
-                padding: 1.5rem;
-                border-radius: 12px;
-                box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-                margin-bottom: 1rem;
-            }
-            
-            .project-card h4, .cert-card h4 {
-                font-size: 1.1rem;
-                margin-bottom: 1rem;
-            }
-            
-            .project-card p, .cert-card p {
-                font-size: 0.9rem;
-                line-height: 1.6;
+                padding: 1.2rem;
             }
             
             .resume-cards {
-                flex-direction: column;
-                margin: 0;
-                gap: 1rem;
-                align-items: center;
+                flex-direction: row;
+                margin: 0 1rem;
+                gap: 0.8rem;
+                justify-content: center;
+                align-items: stretch;
             }
             
             .resume-card {
                 width: 100%;
-                max-width: 280px;
-                padding: 1.2rem;
-                border-radius: 12px;
-                box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            }
-            
-            .btn-project {
-                padding: 0.6rem 1.5rem;
-                font-size: 0.9rem;
-                border-radius: 20px;
-                margin-top: 0.5rem;
+                flex: 1;
+                max-width: none;
+                height: 140px;
+                overflow: hidden;
+                padding: 0.8rem 0.6rem;
             }
         }
     </style>
@@ -924,17 +869,19 @@
    <div class="container">
     <h2 class="section-title">Projects</h2>
     <div class="row g-4">
-     <div class="col-lg-6"><a href="https://github.com/Santhosh-kido/Employee_Management_System/tree/main" class="project-link" target="_blank" rel="noopener noreferrer">
+     <div class="col-lg-6">
        <div class="project-card">
         <h4>Employee Management System</h4>
-        <p>A full-stack web application built using Spring Boot, PostgreSQL, HTML, CSS, and JavaScript. It allows users to add, update, delete, and view employee records with a clean UI and RESTful backend. Designed for efficient data handling and CRUD operations, this project demonstrates practical backend integration, database management, and responsive frontend design.</p><span class="btn-project"><i class="fas fa-link"></i> View on GitHub</span>
-       </div></a>
+        <p>A full-stack web application built using Spring Boot, PostgreSQL, HTML, CSS, and JavaScript. It allows users to add, update, delete, and view employee records with a clean UI and RESTful backend. Designed for efficient data handling and CRUD operations, this project demonstrates practical backend integration, database management, and responsive frontend design.</p>
+        <a href="https://github.com/Santhosh-kido/Employee_Management_System/tree/main" target="_blank" rel="noopener noreferrer" class="btn-project"><i class="fas fa-link"></i> View on GitHub</a>
+       </div>
      </div>
-     <div class="col-lg-6"><a href="https://github.com/Santhosh-kido/Mobile-Addiction-Pdiction-System/tree/main" class="project-link" target="_blank" rel="noopener noreferrer">
+     <div class="col-lg-6">
        <div class="project-card">
         <h4>Mobile Addiction Prediction using ML</h4>
-        <p>A machine learning-based web application designed to analyze user behavior and predict mobile addiction tendencies. Built using Python, scikit-learn the system processes usage patterns and generates insights through classification models. This project demonstrates practical ML implementation, user-centric design, and a focus on digital wellness.</p><span class="btn-project"><i class="fas fa-link"></i> View on GitHub</span>
-       </div></a>
+        <p>A machine learning-based web application designed to analyze user behavior and predict mobile addiction tendencies. Built using Python, scikit-learn the system processes usage patterns and generates insights through classification models. This project demonstrates practical ML implementation, user-centric design, and a focus on digital wellness.</p>
+        <a href="https://github.com/Santhosh-kido/Mobile-Addiction-Pdiction-System/tree/main" target="_blank" rel="noopener noreferrer" class="btn-project"><i class="fas fa-link"></i> View on GitHub</a>
+       </div>
      </div>
     </div>
    </div>
