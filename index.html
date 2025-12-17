@@ -693,7 +693,16 @@
             }
             
             .header {
-                padding: 2rem 0;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 999;
+                padding: 0.4rem 0;
+            }
+            
+            body {
+                padding-top: 110px;
             }
             
             .header h1 {
@@ -722,6 +731,8 @@
             .skill-card {
                 padding: 1rem;
                 margin-bottom: 1rem;
+                max-height: none;
+                height: auto;
             }
             
             .skill-card h4 {
@@ -758,6 +769,11 @@
             
             .btn-project {
                 width: 165px;
+            }
+            
+            .footer {
+                font-size: 0.85rem;
+                white-space: nowrap;
             }
         }
     </style>
