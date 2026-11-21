@@ -1,0 +1,75 @@
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .aboutGrid {
+    grid-template-columns: 1.35fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryText {
+  font-size: 1.15rem;
+  line-height: 1.82;
+  color: var(--text-muted);
+}
+
+.learningCard {
+  background: var(--surface-card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.learningCard:hover {
+  border-color: var(--cyan);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover), 0 0 20px var(--accent-subtle);
+}
+
+.learningTitle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cyan);
+  margin-bottom: 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.learningList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.learningItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.975rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.itemBullet {
+  color: var(--cyan);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}

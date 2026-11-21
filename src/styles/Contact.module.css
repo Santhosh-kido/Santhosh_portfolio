@@ -1,0 +1,335 @@
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .contactGrid {
+    grid-template-columns: 1fr 1.25fr;
+    gap: 3.5rem;
+    align-items: stretch; /* Both columns match height exactly */
+  }
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.75rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.invitationText {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 38rem;
+  margin: 0;
+  text-align: justify;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+/* Primary Direct Contact Channels */
+.primaryLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.cLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  min-height: 62px;
+  padding: 0.85rem 1.15rem;
+  background: var(--surface-card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-subtle);
+  transition: all var(--transition-fast);
+}
+
+.cLink:hover {
+  border-color: var(--cyan);
+  background: var(--accent-subtle);
+  box-shadow: 0 0 16px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.cTextGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cArrow {
+  color: var(--text-subtle);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.cLink:hover .cArrow {
+  transform: translate(2px, -2px);
+  color: var(--cyan);
+}
+
+.compactLink {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.925rem;
+  min-height: 62px;
+  padding: 0.8rem 1rem;
+  background: var(--surface-card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-subtle);
+  transition: all var(--transition-fast);
+}
+
+.compactLink:hover {
+  border-color: var(--cyan);
+  background: var(--accent-subtle);
+  box-shadow: 0 0 14px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.iconCircle {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--accent-subtle);
+  color: var(--cyan);
+  border: 1px solid rgba(0, 245, 212, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cVal {
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--text);
+  word-break: break-word;
+}
+
+/* Social Profiles with Prominent Symbols */
+.socialSymbolsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.socialSymbolsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.socialSymbolsGrid li,
+.primaryLinks li {
+  width: 100%;
+}
+
+.symbolCard {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 62px;
+  padding: 0.85rem 1rem;
+  background: var(--surface-card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-subtle);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.symbolCard:hover {
+  border-color: var(--cyan);
+  background: var(--accent-subtle);
+  box-shadow: 0 0 16px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.symbolIconBox {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--accent-subtle);
+  color: var(--cyan);
+  border: 1px solid rgba(0, 245, 212, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.symbolMeta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.symbolSub {
+  font-family: var(--font-sans);
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.symbolArrow {
+  color: var(--text-subtle);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.symbolCard:hover .symbolArrow {
+  transform: translate(2px, -2px);
+  color: var(--cyan);
+}
+
+/* Right Form Column - Stretches and Aligns with Left Side */
+.formCol {
+  background: var(--surface-card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Matches height with left column */
+}
+
+.formTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+}
+
+.hiddenField {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 600px) {
+  .fRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.messageGroup {
+  flex: 1; /* Allows message input to expand nicely to match height */
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-subtle);
+}
+
+.input, .textarea {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.975rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-subtle);
+  opacity: 1;
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 14px var(--accent-glow);
+  background: var(--surface);
+}
+
+.textarea {
+  min-height: 140px;
+  height: 100%;
+  resize: vertical;
+}
+
+.submitBtn {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+.statusMessage {
+  padding: 0.85rem 1.15rem;
+  border-radius: 8px;
+  font-size: 0.925rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+.successMessage {
+  background: var(--accent-subtle);
+  border: 1px solid var(--cyan);
+  color: var(--text);
+}
+
+.errorMessage {
+  background: rgba(244, 63, 94, 0.1);
+  border: 1px solid #f43f5e;
+  color: var(--text);
+}

@@ -1,0 +1,280 @@
+.heroSection {
+  padding-top: 5.75rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 768px) {
+  .heroSection {
+    padding-top: 6.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+.heroGrid {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.statusBadge {
+  animation: heroReveal 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.name {
+  animation: heroReveal 620ms 80ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.role {
+  animation: heroReveal 620ms 140ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.intro {
+  animation: heroReveal 620ms 200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.ctaRow {
+  animation: heroReveal 620ms 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.photoWrapper {
+  animation: heroReveal 700ms 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (min-width: 768px) {
+  .heroGrid {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 4rem;
+    align-items: center;
+  }
+}
+
+@media (min-width: 960px) {
+  .heroGrid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 5rem;
+  }
+}
+
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--surface-card);
+  border: 1px solid var(--card-border);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--emerald);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px var(--emerald);
+  animation: statusPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.45), 0 0 8px var(--emerald);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(52, 211, 153, 0), 0 0 10px var(--emerald);
+  }
+}
+
+.name {
+  font-size: clamp(2.75rem, 5vw, 4.25rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.role {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.intro {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: var(--content-max-ch);
+  margin-bottom: 2.25rem;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-muted);
+  background: var(--surface);
+  box-shadow: var(--shadow-subtle);
+  transition: all var(--transition-fast);
+}
+
+.socialLink:hover {
+  color: var(--cyan);
+  border-color: var(--cyan);
+  background: var(--accent-subtle);
+  box-shadow: 0 0 12px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Profile Photo */
+.photoCol {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .photoCol {
+    justify-content: flex-end;
+  }
+}
+
+.photoWrapper {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border-radius: 16px; /* Smooth modern curve */
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: var(--surface);
+  box-shadow: var(--shadow-subtle);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.photoWrapper:hover {
+  transform: translateY(-3px);
+  border-color: var(--cyan);
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+@media (min-width: 768px) {
+  .photoWrapper {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media (min-width: 960px) {
+  .photoWrapper {
+    width: 270px;
+    height: 270px;
+  }
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  image-rendering: auto;
+}
+
+.photoFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Fact Strip */
+.factStrip {
+  margin-top: 3.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  align-items: center;
+}
+
+.factItem {
+  display: inline-flex;
+  align-items: center;
+}
+
+.factDivider {
+  color: var(--card-border);
+  font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  .factDivider {
+    display: none;
+  }
+  .factStrip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

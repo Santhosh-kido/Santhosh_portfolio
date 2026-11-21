@@ -1,0 +1,115 @@
+.expStack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.expCard {
+  background: var(--surface-card);
+  border: 1px solid var(--card-border);
+  border-left: 3px solid rgba(13, 148, 136, 0.55);
+  border-radius: 16px;
+  padding: 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+@media (min-width: 640px) {
+  .expCard {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.85rem;
+  }
+}
+
+.expCard:hover {
+  border-color: var(--cyan);
+  border-left-color: var(--cyan);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover), 0 0 20px var(--accent-subtle);
+}
+
+.expIconBox {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: var(--accent-subtle);
+  border: 1px solid rgba(0, 245, 212, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.briefcaseIcon {
+  color: var(--cyan);
+}
+
+.expContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.expOrg {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.expRole {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.45rem;
+}
+
+.expMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-subtle);
+  margin-bottom: 1.25rem;
+}
+
+.expDur, .expLoc {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.pointsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: var(--content-max-ch);
+}
+
+.pointItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.68;
+  color: var(--text-muted);
+}
+
+.bulletDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--cyan);
+  box-shadow: 0 0 6px var(--cyan);
+  margin-top: 0.6rem;
+  flex-shrink: 0;
+}

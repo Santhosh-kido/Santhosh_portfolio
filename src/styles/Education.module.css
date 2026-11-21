@@ -1,0 +1,193 @@
+.educationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* Education Timeline */
+.eduTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  position: relative;
+  padding-left: 2.75rem;
+}
+
+.eduTimeline::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--cyan), var(--violet), rgba(129, 140, 248, 0.1));
+}
+
+.eduItem {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.eduDot {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--surface-card);
+  border: 2px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: -2.75rem;
+  position: relative;
+  z-index: 2;
+  transition: all var(--transition-fast);
+}
+
+.eduDotIcon {
+  color: var(--cyan);
+}
+
+.eduItem:hover .eduDot {
+  border-color: var(--cyan);
+  box-shadow: 0 0 16px rgba(0, 245, 212, 0.35);
+}
+
+.eduCard {
+  flex: 1;
+  background: var(--surface-card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 1.6rem 2rem;
+  margin-left: 1.25rem;
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.eduCard:hover {
+  border-color: var(--cyan);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover), 0 0 20px var(--accent-subtle);
+}
+
+.eduYear {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--cyan);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.eduInst {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.eduDeg {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.85rem;
+}
+
+.eduBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--accent-subtle);
+  border: 1px solid rgba(0, 245, 212, 0.25);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+/* Certifications Sub-section */
+.certsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.certsHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.awardIcon {
+  color: var(--cyan);
+}
+
+.certsTitle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.certsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .certsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.certCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.45rem;
+  background: var(--surface-card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.certCard:hover {
+  border-color: var(--cyan);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover), 0 0 20px var(--accent-subtle);
+}
+
+.certIconBox {
+  color: var(--cyan);
+  flex-shrink: 0;
+  display: flex;
+}
+
+.certContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.certProv {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--violet);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.certNm {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.35;
+}
