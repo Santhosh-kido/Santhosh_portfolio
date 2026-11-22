@@ -36,7 +36,7 @@ export default function Contact() {
     setStatus('submitting');
 
     try {
-      const response = await fetch('/__forms.html', {
+      const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
